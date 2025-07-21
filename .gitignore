@@ -1,0 +1,92 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Pyright
+.pyright/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Test coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Docker
+*.tar
+*.log
+docker-compose.override.yml
+**/Dockerfile.*
+
+# Output directories
+output/
+dist/
+build/
+*.egg-info/
+
+# PDFs & data
+*.pdf
+*.csv
+*.tsv
+*.xlsx
+*.docx
+
+# Logs and dumps
+*.log
+*.bak
+*.swp
+*.tmp
+*.old
+
+# Mac/Linux system files
+.DS_Store
+Thumbs.db
+
+# dotenv files
+*.env
+.env.*
