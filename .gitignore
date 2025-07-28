@@ -70,7 +70,6 @@ build/
 *.egg-info/
 
 # PDFs & data
-*.pdf
 *.csv
 *.tsv
 *.xlsx
