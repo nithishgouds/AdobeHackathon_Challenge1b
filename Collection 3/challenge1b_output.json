@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "input_documents": [
+      "Breakfast Ideas.pdf",
+      "Dinner Ideas - Mains_1.pdf",
+      "Dinner Ideas - Mains_2.pdf",
+      "Dinner Ideas - Mains_3.pdf",
+      "Dinner Ideas - Sides_1.pdf",
+      "Dinner Ideas - Sides_2.pdf",
+      "Dinner Ideas - Sides_3.pdf",
+      "Dinner Ideas - Sides_4.pdf",
+      "Lunch Ideas.pdf"
+    ],
+    "persona": "Food Contractor",
+    "job_to_be_done": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items.",
+    "processing_timestamp": "2025-07-28T05:58:46.836626"
+  },
+  "extracted_sections": [
+    {
+      "document": "Dinner Ideas - Sides_1.pdf",
+      "section_title": "Antipasto",
+      "importance_rank": 1,
+      "page_number": 3
+    },
+    {
+      "document": "Dinner Ideas - Sides_2.pdf",
+      "section_title": "Fattoush",
+      "importance_rank": 2,
+      "page_number": 8
+    },
+    {
+      "document": "Dinner Ideas - Sides_2.pdf",
+      "section_title": "Gyeran Jjim",
+      "importance_rank": 3,
+      "page_number": 15
+    },
+    {
+      "document": "Dinner Ideas - Sides_2.pdf",
+      "section_title": "Guacamole",
+      "importance_rank": 4,
+      "page_number": 14
+    },
+    {
+      "document": "Dinner Ideas - Sides_4.pdf",
+      "section_title": "Quindim",
+      "importance_rank": 5,
+      "page_number": 7
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "Dinner Ideas - Sides_1.pdf",
+      "refined_text": "Antipasto - Ingredients: Assorted cured meats (salami, prosciutto), Cheeses (mozzarella, provolone), Olives, Marinated vegetables (artichokes, peppers), Breadsticks Instructions: Arrange meats, cheeses, olives, and vegetables on a platter. Serve with breadsticks.",
+      "page_number": 3
+    },
+    {
+      "document": "Dinner Ideas - Sides_2.pdf",
+      "refined_text": "Fattoush - Ingredients: 2 pita breads, 4 tomatoes, 1 cucumber, 1 small red onion, 1/4 cup parsley, 1/4 cup mint, 1/4 cup lemon juice, 1/4 cup olive oil, 1 teaspoon sumac, 1 teaspoon salt Instructions: Toast pita breads until crispy, then break into pieces. Dice tomatoes and cucumber, slice red onion. Mix vegetables with chopped parsley and mint. Whisk lemon juice, olive oil, sumac, and salt, then pour over salad. Toss well and serve.",
+      "page_number": 8
+    },
+    {
+      "document": "Dinner Ideas - Sides_2.pdf",
+      "refined_text": "Gyeran Jjim - Ingredients: 4 eggs, 1 cup water, 1/4 cup green onions, 1 teaspoon salt, 1/2 teaspoon sesame oil Instructions: Beat eggs with water, salt, and chopped green onions. Pour mixture into a heatproof bowl. Steam for 10-15 minutes until set. Drizzle with sesame oil and serve warm.",
+      "page_number": 15
+    },
+    {
+      "document": "Dinner Ideas - Sides_2.pdf",
+      "refined_text": "Guacamole - Ingredients: 3 avocados, 1 lime, 1 small onion, 2 tomatoes, 1 teaspoon salt, 1 tablespoon chopped cilantro, 1 teaspoon minced garlic Instructions: Cut avocados in half, remove the pit, and scoop out the flesh into a bowl. Mash the avocados with a fork. Add lime juice, diced onion, chopped tomatoes, salt, cilantro, and garlic. Mix well and serve immediately.",
+      "page_number": 14
+    },
+    {
+      "document": "Dinner Ideas - Sides_4.pdf",
+      "refined_text": "Quindim - Ingredients: 2 cups sugar, 1 cup coconut, 1/4 cup butter, 10 egg yolks, 1 teaspoon vanilla extract Instructions: Preheat oven to 350°F (175°C). Mix sugar, coconut, melted butter, egg yolks, and vanilla extract in a bowl. Pour mixture into greased muffin tins. Bake for 30-35 minutes until set and golden. Let cool before removing from tins. Serve chilled.",
+      "page_number": 7
+    }
+  ]
+}
