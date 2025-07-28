@@ -1,0 +1,8 @@
+numpy==1.24.4
+faiss-cpu==1.7.4
+PyMuPDF>=1.26.3
+sentence-transformers==2.2.2
+torch>=2.1.0,<2.2
+transformers<5.0.0
+huggingface_hub==0.14.1
+pymupdf4llm ==0.0.27
