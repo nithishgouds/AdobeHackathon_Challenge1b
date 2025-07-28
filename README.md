@@ -213,9 +213,11 @@ docker run -it -v "${PWD}/Collection 1:/app/Collection 1" --network none adobeha
 ```
 
 -----
+-----
 
 ** Replace the absolute path in quotes with your actual local directory if needed.**  
 ** Ensure quotes wrap any path that includes spaces (like "Collection 1").**  
 ** No internet access is used at runtime due to `--network none`.**  
 ** Output is written to your mounted Collection 1 folder.**
 
+-----
