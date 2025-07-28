@@ -7,7 +7,7 @@ The solution combines state-of-the-art NLP technique with efficient document pro
 
 ---
 
-✅ **Key highlights of this solution:**
+**Key highlights of this solution:**
 
 * **Persona-Driven Querying:** Dynamically constructs queries based on role and task descriptions.
 * **Semantic Section Ranking:** Embeds and ranks document sections based on relevance to the user query.
@@ -17,7 +17,7 @@ The solution combines state-of-the-art NLP technique with efficient document pro
 
 ---
 
-## 🚀 Overview
+## Overview
 
 Modern PDFs contain a wealth of information, but surfacing just the right parts for a specific user goal is challenging. This system bridges that gap by doing the following:
 
@@ -31,7 +31,7 @@ Modern PDFs contain a wealth of information, but surfacing just the right parts 
 
 ---
 
-## 📦 Folder Structure
+## Folder Structure
 
 ```
 
@@ -55,7 +55,7 @@ Modern PDFs contain a wealth of information, but surfacing just the right parts 
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 Set up your Python environment with the required dependencies:
 
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 -----
 
-## 🧠 Model & Libraries Used
+## Model & Libraries Used
 
   * **SentenceTransformer** for semantic embeddings (`intfloat/e5-small-v2`)
   * **PyMuPDF** for PDF parsing
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 -----
 
-## 📥 Input Format
+## Input Format
 
 Input is read from a JSON file with the following structure:
 
@@ -92,7 +92,7 @@ Input is read from a JSON file with the following structure:
 
 -----
 
-## 📤 Output Format
+## Output Format
 
 The output is a JSON file structured like this:
 
@@ -123,7 +123,7 @@ The output is a JSON file structured like this:
 
 -----
 
-## ▶️ How to Run
+## How to Run
 
 Run the script via CLI:
 
@@ -145,9 +145,9 @@ python main.py --input_json "./Collection 1/challenge1b_input.json" \
 
 -----
 
-## 🧩 How It Works
+## How It Works
 
-1.  📄 **PDF Parsing:**
+1.  **PDF Parsing:**
 
       * Each PDF is opened using PyMuPDF (fitz) and processed page by page.
       * Pages are converted to markdown using pymupdf4llm, preserving formatting cues like bold and headings.
@@ -155,30 +155,30 @@ python main.py --input_json "./Collection 1/challenge1b_input.json" \
       * In parallel, font size heuristics are applied: short text spans with font size \> 12 are considered potential headings.
       * The combined results are deduplicated to form a structured outline of H1/H2 headings for downstream processing.
 
-2.  📚 **Section Detection:**
+2.  **Section Detection:**
 
       * Using detected headings (H1/H2), the document is split into coherent sections.
 
-3.  🧠 **Semantic Embedding:**
+3.  **Semantic Embedding:**
 
       * Each section is encoded using `intfloat/e5-small-v2` for meaning-based comparison.
 
-4.  ⚡ **FAISS Indexing:**
+4.  **FAISS Indexing:**
 
       * Encoded vectors are stored and queried efficiently using FAISS inner product similarity.
 
-5.  🎯 **Relevance Matching:**
+5.  **Relevance Matching:**
 
       * The user query is generated from the input persona and task.
       * Top-matching sections are retrieved, ranked, and cleaned.
 
-6.  📝 **Output Generation:**
+6.  **Output Generation:**
 
       * The final JSON includes section metadata and refined human-readable content.
 
 -----
 
-## 📚 Dependencies
+## Dependencies
 
 ```
 numpy==1.24.4
@@ -193,7 +193,7 @@ pymupdf4llm==0.0.27
 
 -----
 
-## 🧱 Build Command
+## Build Command
 
 Run this from inside your solution folder (where `Dockerfile` is located):
 
@@ -203,9 +203,9 @@ docker build -t adobehackathon1b:uniqueid .
 
 -----
 
-## 🚀 Run Command
+##  Run Command
 
-✅ **Usage:**
+**Usage:**
 Use absolute paths or `${PWD}` and forward slashes:
 
 ```powershell
@@ -214,8 +214,8 @@ docker run -it -v "${PWD}/Collection 1:/app/Collection 1" --network none adobeha
 
 -----
 
-**🔁 Replace the absolute path in quotes with your actual local directory if needed.**  
-**✅ Ensure quotes wrap any path that includes spaces (like "Collection 1").**  
-**🚫 No internet access is used at runtime due to `--network none`.**  
-**✅ Output is written to your mounted Collection 1 folder.**
+** Replace the absolute path in quotes with your actual local directory if needed.**  
+** Ensure quotes wrap any path that includes spaces (like "Collection 1").**  
+** No internet access is used at runtime due to `--network none`.**  
+** Output is written to your mounted Collection 1 folder.**
 
