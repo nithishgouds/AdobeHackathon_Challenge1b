@@ -1,9 +1,9 @@
-```markdown
+
 # PDF Processing Solution for Adobe India Hackathon 2025 - Challenge 1b
 
-This repository presents a robust and intelligent solution for **Challenge 1b of the Adobe India Hackathon 2025**, focused on **context-aware content retrieval from PDF documents** based on a given persona and job-to-be-done. The system is designed to identify and extract the most relevant sections from a set of documents by leveraging semantic understanding, document structure parsing, and vector similarity search.
+This repository presents a robust and intelligent solution for **Challenge 1b of the Adobe India Hackathon 2025**, focused on **context-aware content retrieval from PDF documents** based on a given persona and job-to-be-done. The system is designed to identify and extract the most relevant sections from a set of documents by leveraging semantic understanding, document structure parsing.
 
-The solution combines state-of-the-art NLP techniques with efficient document processing and is structured to be easily extensible and adaptable. It utilizes **Sentence Transformers** for generating high-quality embeddings, **FAISS** for fast approximate nearest-neighbor search, and **PyMuPDF with pymupdf4llm** to analyze document structure and extract meaningful sections. The output is generated in a clean and structured JSON format, making it suitable for downstream analysis or integration with other tools.
+The solution combines state-of-the-art NLP technique with efficient document processing and is structured to be easily extensible and adaptable. It utilizes **Sentence Transformers** for generating high-quality embeddings, **FAISS** for fast approximate nearest-neighbor search, and **PyMuPDF with pymupdf4llm** to analyze document structure and extract meaningful sections. The output is generated in a clean and structured JSON format, making it suitable for downstream analysis or integration with other tools.
 
 ---
 
@@ -134,14 +134,14 @@ python main.py --input_json "./Collection 1/challenge1b_input.json" \
                --num_results 5
 ```
 
-**Optional CLI Parameters:**
+**Required CLI Parameters:**
 
 | Argument            | Default                             | Description                        |
 | :------------------ | :---------------------------------- | :--------------------------------- |
-| `--input_json`      | `./Collection 1/challenge1b_input.json` | Path to input JSON with query info |
-| `--pdf_folder`      | `./Collection 1/PDFs`               | Folder containing the PDF documents |
-| `--output_json`     | `./Collection 1/challenge1b_output.json` | Output file for extracted results |
-| `--num_results`     | `5`                                 | Number of top sections to return   |
+| `input_json`      | `./Collection 1/challenge1b_input.json` | Path to input JSON with query info |
+| `pdf_folder`      | `./Collection 1/PDFs`               | Folder containing the PDF documents |
+| `output_json`     | `./Collection 1/challenge1b_output.json` | Output file for extracted results |
+| `num_results`     | `5`                                 | Number of top sections to return(Default=5)   |
 
 -----
 
@@ -165,7 +165,7 @@ python main.py --input_json "./Collection 1/challenge1b_input.json" \
 
 4.  ⚡ **FAISS Indexing:**
 
-      * Encoded vectors are stored and queried efficiently using FAISS' inner product similarity.
+      * Encoded vectors are stored and queried efficiently using FAISS inner product similarity.
 
 5.  🎯 **Relevance Matching:**
 
@@ -193,26 +193,6 @@ pymupdf4llm==0.0.27
 
 -----
 
-## 🛠️ Dockerfile (✅ Matches their requirement)
-
-```dockerfile
-FROM python:3.10-slim
-
-WORKDIR /app
-
-COPY main.py requirements.txt process_pdfs.py ./
-
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
-
-# ✅ Pre-download the model (so internet not required during runtime)
-RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('intfloat/e5-small-v2')"
-
-CMD ["python", "main.py"]
-```
-
------
-
 ## 🧱 Build Command
 
 Run this from inside your solution folder (where `Dockerfile` is located):
@@ -223,33 +203,19 @@ docker build -t adobehackathon1b:uniqueid .
 
 -----
 
-## 🚀 Run Command (Cross-platform Guide)
+## 🚀 Run Command
 
-✅ **Recommended for Windows PowerShell:**
-Use absolute paths or PowerShell's `${PWD}` and forward slashes:
+✅ **Usage:**
+Use absolute paths or `${PWD}` and forward slashes:
 
 ```powershell
 docker run -it -v "${PWD}/Collection 1:/app/Collection 1" --network none adobehackathon1b:uniqueid python main.py --input_json "./Collection 1/challenge1b_input.json" --pdf_folder "./Collection 1/PDFs" --output_json "./Collection 1/challenge1b_output.json"
 ```
 
-✅ **If using Git Bash or Linux/macOS Terminal:**
-
-```bash
-docker run -it -v "$(pwd)/Collection 1:/app/Collection 1" --network none adobehackathon1b:uniqueid python main.py --input_json "./Collection 1/challenge1b_input.json" --pdf_folder "./Collection 1/PDFs" --output_json "./Collection 1/challenge1b_output.json"
-```
-
-✅ **Or hardcode absolute paths (Windows CMD-compatible):**
-
-```bash
-docker run -it -v "C:/Users/YourName/Documents/AdobeHackathon/Collection 1:/app/Collection 1" --network none adobehackathon1b:uniqueid python main.py --input_json "./Collection 1/challenge1b_input.json" --pdf_folder "./Collection 1/PDFs" --output_json "./Collection 1/challenge1b_output.json"
-```
-
 -----
 
-**🔁 Replace the absolute path in quotes with your actual local directory if needed.**
-**✅ Ensure quotes wrap any path that includes spaces (like "Collection 1").**
-**🚫 No internet access is used at runtime due to `--network none`.**
+**🔁 Replace the absolute path in quotes with your actual local directory if needed.**  
+**✅ Ensure quotes wrap any path that includes spaces (like "Collection 1").**  
+**🚫 No internet access is used at runtime due to `--network none`.**  
 **✅ Output is written to your mounted Collection 1 folder.**
 
-```
-```
